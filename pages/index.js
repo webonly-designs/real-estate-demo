@@ -1,3 +1,4 @@
+import FeaturedListing from '@/components/Home/FeaturedListing'
 import Hero from '@/components/Home/Hero'
 import Nav from '@/components/Nav'
 import Head from 'next/head'
@@ -14,6 +15,7 @@ export default function Home() {
       <Nav />
       <main className='max-w-7xl mx-auto px-5'>
         <Hero />
+        <FeaturedListing />
       </main>
     </>
   )
