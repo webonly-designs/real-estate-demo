@@ -11,7 +11,7 @@ export async function getServerSideProps({query}) {
     const placeUrl = 'https://bayut.p.rapidapi.com/auto-complete?query=dubai&hitsPerPage=1&page=0&lang=en'
     const resPlace = await fetch(placeUrl, {
       headers: {
-        'X-RapidAPI-Key': 'ecc720d6c7mshc52a79cc34f9104p15f53djsnf06cb96082bf',
+        'X-RapidAPI-Key': process.env.KEY,
         'X-RapidAPI-Host': 'bayut.p.rapidapi.com',
      }})
      const placeData = await resPlace.json()
@@ -19,7 +19,7 @@ export async function getServerSideProps({query}) {
      const listingUrl = `https://bayut.p.rapidapi.com/properties/list?locationExternalIDs=${extId}&purpose=for-sale&hitsPerPage=24&page=0&lang=en&sort=city-level-score`
      const resListing = await fetch(listingUrl, {
       headers: {
-        'X-RapidAPI-Key': 'ecc720d6c7mshc52a79cc34f9104p15f53djsnf06cb96082bf',
+        'X-RapidAPI-Key': process.env.KEY,
         'X-RapidAPI-Host': 'bayut.p.rapidapi.com',
      }
     })
