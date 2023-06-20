@@ -12,12 +12,13 @@ function Nav() {
             src="logo.png"
             alt="Dhamen Logo"
             className='w-[106px] h-full'
+            loading='lazy'
         />
         <div className='hidden lg:flex items-center space-x-12'>
             <Link href="/" className='text-black/60 hover:text-black/80'>
                 Home
             </Link>
-            <Link href="/" className='text-black/60 hover:text-black/80'>
+            <Link href="/listing/dubai" className='text-black/60 hover:text-black/80'>
                 Listing
             </Link>
             <Link href="/" className='text-black/60 hover:text-black/80'>
@@ -29,10 +30,10 @@ function Nav() {
             <Link href="/" className='text-black/60 hover:text-black/80'>
                 About
             </Link>
-            <Link href="/" className='text-black/60 hover:text-black/80'>
+            <Link href="/contact" className='text-black/60 hover:text-black/80'>
                 Contact Us
             </Link>
-            <Link href="/" className='py-2 px-6 bg-[#3854B5] text-white rounded-full hover:bg-black'>
+            <Link href="/contact" className='py-2 px-6 bg-[#3854B5] text-white rounded-full hover:bg-black'>
                 Get a Quote
             </Link>
         </div>
@@ -53,7 +54,7 @@ function Nav() {
                             <Link href="/" className='text-black/60 hover:text-black/80' onClick={() => setIsMenuOpen(false)}>
                                 Home
                             </Link>
-                            <Link href="/" className='text-black/60 hover:text-black/80' onClick={() => setIsMenuOpen(false)}>
+                            <Link href="/listing/dubai" className='text-black/60 hover:text-black/80' onClick={() => setIsMenuOpen(false)}>
                                 Listing
                             </Link>
                             <Link href="/" className='text-black/60 hover:text-black/80' onClick={() => setIsMenuOpen(false)}>

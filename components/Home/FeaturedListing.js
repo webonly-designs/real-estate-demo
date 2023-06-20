@@ -10,7 +10,7 @@ function FeaturedListing() {
     console.log(d)
 
   return (
-    <div className='my-16 lg:my-20 space-y-12 md:space-y-16'>
+    <div className='my-16 space-y-12 md:space-y-16'>
        <h2 className='text-4xl font-semibold text-[#333333] tracking-wide'>Featured Listing</h2>
        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-10'>
         {data.slice(0,4).map((property) => (

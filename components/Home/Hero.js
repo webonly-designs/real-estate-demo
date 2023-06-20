@@ -1,8 +1,9 @@
 import Link from 'next/link'
-import React from 'react'
+import React, { useState } from 'react'
 import {FaSearch} from "react-icons/fa"
 
 function Hero() {
+  const [place, setPlace] = useState("")
   return (
     <div className='lg:flex items-center my-6 lg:my-16 lg:space-x-24'>
 
@@ -18,10 +19,26 @@ function Hero() {
             <FaSearch className='w-4 h-4 ml-2 text-[#ebebeb]' />
             <input 
               type="text"
-              placeholder='Enter a location in UAE here ...'
-              className='text-sm flex-1 bg-transparent'
+              placeholder='Enter a location in UAE here ... (like Dubai)'
+              className='text-sm flex-1 bg-transparent outline-none'
+              value={place}
+              onChange={(e) => setPlace(e.target.value)}
             />
-            <Link href="/" className='py-2 px-8 bg-[#3854B5] rounded-full text-white hover:bg-black'>Search</Link>
+            {place.length > 0 ? (
+              <Link href={`listing/${place}`}
+                className='py-2 px-8 bg-[#3854B5] rounded-full text-white hover:bg-black'
+                
+              >
+                  Search
+              </Link>
+            ):(
+              <button 
+                className='py-2 px-8 bg-gray-400 rounded-full text-white'
+                disabled={true}
+              >
+                  Search
+              </button>
+            )}
           </div>
         </form>
         <div className='flex items-center space-x-16'>
@@ -41,7 +58,7 @@ function Hero() {
 
       </div>
       
-      <div className='lg:w-1/2 mt-5 lg:mt-0'>
+      <div className='lg:w-1/2 mt-8 lg:mt-0'>
         <img src='dhalem-hero.jpg' className='w-full h-96 md:h-[500px] lg:h-full rounded-2xl object-cover'/>
       </div>
 
