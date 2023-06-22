@@ -2,6 +2,8 @@ import Footer from '@/components/Footer'
 import Nav from '@/components/Nav'
 import React from 'react'
 import Head from 'next/head'
+import { ImLocation } from "react-icons/im";
+import { FaPhone } from 'react-icons/fa';
 
 function contact() {
   return (
@@ -22,9 +24,69 @@ function contact() {
               Bring Your Family's Happiness to Your Dream House
             </p>
          </div>
-         <div className='grid grid-cols-1 md:grid-cols-3 gap-x-10 gap-y-5'>
-            <div className='md:col-span-2 space-y-5'>
-              
+         <div className='grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-10'>
+          <div className='space-y-5'>
+              <div className='space-y-3'>
+                <h3 className='text-2xl font-semibold tracking-wide leading-[2.3rem] text-[#333333]'>Get In Touch!!</h3>
+                <p className='text-[#666666] tracking-wide leading-7'>
+                  Dubai, known for its opulent architecture, breathtaking skylines, 
+                  and extravagant lifestyle, is a city that exudes luxury and glamour.
+                </p>
+              </div>
+              <div className='space-y-4'>
+                <div className='flex'>
+                  <span className='mr-2'>
+                    <ImLocation className='w-5 h-5 text-[#222430]' />
+                  </span>
+                  <p className='tracking-wide text-[#666666] text-sm'>1 Sheikh Mohammed bin Rashid Blvd - Downtown Dubai - Dubai - United Arab Emirates</p>
+                </div>
+                <div className='flex'>
+                  <span className='mr-2'>
+                    <FaPhone className='w-5 h-5 text-[#222430]' />
+                  </span>
+                  <p className='tracking-wide text-[#666666] text-sm'>+971 4 888 8888</p>
+                </div>
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3610.1786541130464!2d55.2717961115114!3d25.197196977618017!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f43348a67e24b%3A0xff45e502e1ceb7e2!2sBurj%20Khalifa!5e0!3m2!1sen!2sca!4v1687463710785!5m2!1sen!2sca" 
+                  width="100%" 
+                  height="300" 
+                  className='rounded-2xl' 
+                  style={{border: 0}} 
+                  allowfullscreen="" 
+                  loading="lazy" 
+                  referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+              </div>
+            </div>
+            <div className='space-y-5'>
+              <h3 className='text-2xl font-semibold tracking-wide leading-[2.3rem] text-[#333333]'>Have a Question? Request a Visit? or Request a Quote? Don’t be Shy to Message Us!</h3>
+              <div className='space-y-5'>
+                <input
+                  type='text'
+                  className='py-4 px-6 bg-gray-50 w-full rounded-xl text-sm outline-none'
+                  placeholder='Your Name'
+                />
+                <input
+                  type='text'
+                  className='py-4 px-6 bg-gray-50 w-full rounded-xl text-sm outline-none'
+                  placeholder='Your Email'
+                />
+                <input
+                  type='text'
+                  className='py-4 px-6 bg-gray-50 w-full rounded-xl text-sm outline-none'
+                  placeholder='Your Phone Number'
+                />
+                <textarea
+                  type='text'
+                  className='py-4 px-6 bg-gray-50 w-full rounded-xl text-sm outline-none'
+                  placeholder='Enter Listing Details and Time You Are Looking to Book For Viewing...'
+                />
+                <button
+                  className='px-6 py-4 w-full bg-[#3854B5] rounded-xl font-semibold text-white hover:bg-[#333333]'
+                >
+                  Book Showing
+                </button>
+              </div>
             </div>
          </div>
       </main>

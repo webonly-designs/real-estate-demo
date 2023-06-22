@@ -6,7 +6,7 @@ import Nav from '@/components/Nav'
 import { ImLocation } from "react-icons/im";
 import {MdVerified, MdLeaderboard, MdRealEstateAgent} from "react-icons/md"
 import { HiHome } from "react-icons/hi"
-import {FaBed, FaBath, FaHouseUser, FaPhone, FaCheckDouble} from "react-icons/fa"
+import {FaBed, FaBath, FaHouseUser, FaPhonee} from "react-icons/fa"
 import {GiModernCity} from "react-icons/gi"
 import Link from 'next/link'
 import Head from 'next/head'
