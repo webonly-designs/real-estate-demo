@@ -1,5 +1,4 @@
 import React from 'react'
-import properties from '../../data/properties.json'
 import { useRouter } from "next/router";
 import Head from 'next/head';
 import Link from 'next/link';
@@ -9,7 +8,7 @@ import Footer from '@/components/Footer';
 
 
 
-function Place() {
+function Place({dataListing}) {
   const r = useRouter();
   return (
     <div>
@@ -30,7 +29,7 @@ function Place() {
             </p>
           </div>
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-10'>
-            {properties.hits.map(property => (
+            {dataListing.hits.map(property => (
               <Link href={`/property/${property.externalID}`} key={property.id} className='hover:scale-105 transition-all duration-200 fade-in-out'>
                 <PropertyList property={property}/>
               </Link>
@@ -40,6 +39,32 @@ function Place() {
         <Footer />
     </div>
   )
+}
+
+export async function getServerSideProps({query}) {
+  const {place} = query
+  const placeUrl = `https://bayut.p.rapidapi.com/auto-complete?query=${place}&hitsPerPage=1&page=0&lang=en`
+  const resPlace = await fetch(placeUrl, {
+    headers: {
+      'X-RapidAPI-Key': process.env.KEY,
+      'X-RapidAPI-Host': 'bayut.p.rapidapi.com',
+   }})
+   const placeData = await resPlace.json()
+   const extId = placeData.hits[0].externalID
+   const listingUrl = `https://bayut.p.rapidapi.com/properties/list?locationExternalIDs=${extId}&purpose=for-sale&hitsPerPage=24&page=0&lang=en&sort=city-level-score`
+   const resListing = await fetch(listingUrl, {
+    headers: {
+      'X-RapidAPI-Key': process.env.KEY,
+      'X-RapidAPI-Host': 'bayut.p.rapidapi.com',
+   }
+  })
+  const dataListing = await resListing.json()
+  return {
+    props: {
+      placeData: placeData,
+      dataListing: dataListing
+    }
+  }
 }
 
 

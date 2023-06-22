@@ -1,6 +1,5 @@
 import { useRouter, useState, useEffect } from 'next/router'
 import React from 'react'
-import property from '../../data/property.json'
 import ImageCarousel from '@/components/ImageCarousel'
 import Nav from '@/components/Nav'
 import { ImLocation } from "react-icons/im";
@@ -13,16 +12,12 @@ import Head from 'next/head'
 import Footer from '@/components/Footer'
 
 
-function Property() {
+function Property({property}) {
     const r = useRouter()
     function currencyFormat(num) {
       return '$ ' + num.toFixed(1).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
     }
-
-    const id = property.videos[0].url.split('/')
-    const len = id.length
-    const videoId = id[len - 1] 
-
+  
   return (
     <div>
       <Head>
@@ -87,11 +82,11 @@ function Property() {
               <h2 className='text-2xl md:text-3xl font-semibold text-[#333333] tracking-wide mb-5'>Property Details</h2>
               <p className='text-[#666666] tracking-wide leading-7'>{property.description}</p>
               <div>
-                {property.videos[0].url && (
+                {property.videos && (
                   <div className='w-full h-64 md:h-96 rounded-2xl bg-gray-50 relative'>
                     <iframe
                       className=" min-w-full min-h-full w-auto h-auto bg-cover rounded-2xl"
-                      src={`https://www.youtube.com/embed/${videoId}`}
+                      src="https://www.youtube.com/embed/jFwDfJ6eze0"
                       id="mainVideo"
                     ></iframe>
                   </div>
@@ -133,6 +128,22 @@ function Property() {
       <Footer />
     </div>
   )
+}
+
+export async function getServerSideProps({query}) {
+  const {id} = query
+  const url = `https://bayut.p.rapidapi.com/properties/detail?externalID=${id}`
+  const resProperty = await fetch(url, {
+    headers: {
+      'X-RapidAPI-Key': process.env.KEY,
+      'X-RapidAPI-Host': 'bayut.p.rapidapi.com',
+   }})
+   const property = await resProperty.json()
+   return {
+    props: {
+      property: property
+    }
+   }
 }
 
 

@@ -18,7 +18,7 @@ function ImageCarousel({images}) {
     )
   })
   return (
-    <div className='w-full h-full relative'>
+    <div className='w-full h-48 md:h-96 bg-gray-50 rounded-2xl relative'>
       <Swiper
         modules={[Navigation, Pagination]}
         slidesPerView={2}
