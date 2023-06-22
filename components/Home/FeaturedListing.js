@@ -1,6 +1,7 @@
 import React from 'react'
 import properties from "../../data/properties.json"
 import { ImLocation } from "react-icons/im";
+import Link from 'next/link';
 
 function FeaturedListing() {
 
@@ -18,6 +19,7 @@ function FeaturedListing() {
        <h2 className='text-4xl font-semibold text-[#333333] tracking-wide'>Featured Listing</h2>
        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-10'>
         {data.slice(0,4).map((property) => (
+          <Link href={`property/${property.externalId}`} className='hover:scale-105 transition-all duration-200 fade-in-out'>
             <div key={property.id} className='space-y-3'>
                <div className='relative'>
                 <p className='absolute top-3 left-3 bg-[#222430] text-white px-4 py-3 rounded-full'>{currencyFormat(property.price)}</p>
@@ -29,6 +31,7 @@ function FeaturedListing() {
                 <p className='tracking-wide text-[#666666]'>{property.location[2].name}, {property.location[1].name}</p>
                </div>
             </div>
+          </Link>
         ))}
 
        </div>
