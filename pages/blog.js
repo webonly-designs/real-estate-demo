@@ -4,6 +4,7 @@ import Nav from '@/components/Nav'
 import Link from 'next/link'
 import TimeAgo from 'timeago-react'
 import {FaClock, FaArrowRight} from 'react-icons/fa'
+import Footer from '@/components/Footer'
 
 function blog() {
 
@@ -41,7 +42,7 @@ function blog() {
                     Find Your Dream House And <Link href="/contact" className='underline'>Contact Us</Link> Today!!, Or <Link href="/" className='underline'>Search Again</Link>
                 </p>
             </div>
-            <div className='grid grid-cols-1 md:grid-cols-3 gap-x-7 gap-y-10'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-7 gap-y-10'>
                 {blogs.map((blog, index) =>(
                     <div key={index}>
                         <Link href={blog.link} className='space-y-3'>
@@ -60,6 +61,7 @@ function blog() {
                 ))}
             </div>
         </main>
+        <Footer />
     </div>
   )
 }

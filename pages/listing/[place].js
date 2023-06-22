@@ -5,6 +5,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import PropertyList from '@/components/PropertyList';
 import Nav from '@/components/Nav';
+import Footer from '@/components/Footer';
 
 
 
@@ -34,9 +35,9 @@ function Place() {
                 <PropertyList property={property}/>
               </Link>
             ))}
-
           </div>
         </main>
+        <Footer />
     </div>
   )
 }

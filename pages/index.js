@@ -1,6 +1,9 @@
+import Footer from '@/components/Footer'
 import About from '@/components/Home/About'
+import Action from '@/components/Home/Action'
 import FeaturedListing from '@/components/Home/FeaturedListing'
 import Hero from '@/components/Home/Hero'
+import Steps from '@/components/Home/Steps'
 import Nav from '@/components/Nav'
 import Head from 'next/head'
 
@@ -19,6 +22,9 @@ export default function Home() {
         <FeaturedListing />
       </main>
       <About />
+      <Steps />
+      <Action />
+      <Footer />
     </>
   )
 }

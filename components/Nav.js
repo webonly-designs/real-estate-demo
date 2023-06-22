@@ -19,20 +19,14 @@ function Nav() {
             <Link href="/listing/dubai" className='text-black/60 hover:text-black/80'>
                 Listing
             </Link>
-            <Link href="/" className='text-black/60 hover:text-black/80'>
-                Services
-            </Link>
             <Link href="/blog" className='text-black/60 hover:text-black/80'>
                 Blog
-            </Link>
-            <Link href="/" className='text-black/60 hover:text-black/80'>
-                About
             </Link>
             <Link href="/contact" className='text-black/60 hover:text-black/80'>
                 Contact Us
             </Link>
             <Link href="/contact" className='py-2 px-6 bg-[#3854B5] text-white rounded-full hover:bg-black'>
-                Get a Quote
+                Book Showing
             </Link>
         </div>
         <div className='lg:hidden'>
@@ -54,20 +48,14 @@ function Nav() {
                             <Link href="/listing/dubai" className='text-black/60 hover:text-black/80' onClick={() => setIsMenuOpen(false)}>
                                 Listing
                             </Link>
-                            <Link href="/" className='text-black/60 hover:text-black/80' onClick={() => setIsMenuOpen(false)}>
-                                Services
-                            </Link>
                             <Link href="/blog" className='text-black/60 hover:text-black/80' onClick={() => setIsMenuOpen(false)}>
                                 Blog
                             </Link>
-                            <Link href="/" className='text-black/60 hover:text-black/80' onClick={() => setIsMenuOpen(false)}>
-                                About
-                            </Link>
-                            <Link href="/" className='text-black/60 hover:text-black/80' onClick={() => setIsMenuOpen(false)}>
+                            <Link href="/contact" className='text-black/60 hover:text-black/80' onClick={() => setIsMenuOpen(false)}>
                                 Contact Us
                             </Link>
-                            <Link href="/" className='py-2 px-6 bg-[#3854B5] text-white rounded-full text-center hover:bg-black' onClick={() => setIsMenuOpen(false)}>
-                                Get a Quote
+                            <Link href="/contact" className='py-2 px-6 bg-[#3854B5] text-white rounded-full text-center hover:bg-black' onClick={() => setIsMenuOpen(false)}>
+                                Book Showing
                             </Link>
                         </div>
                     </div>
