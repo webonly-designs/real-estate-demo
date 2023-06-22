@@ -4,10 +4,13 @@ import { HiHome } from "react-icons/hi"
 import {FaBed, FaBath} from "react-icons/fa"
 
 function PropertyList({property}) {
+    function currencyFormat(num) {
+        return '$ ' + num.toFixed(1).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+    }
   return (
     <div className='space-y-3'>
         <div className='relative'>
-            <p className='absolute top-3 left-3 bg-[#222430] text-white px-4 py-3 rounded-full'>$ {property.price}</p>
+            <p className='absolute top-3 left-3 bg-[#222430] text-white px-4 py-3 rounded-full'>{currencyFormat(property.price)}</p>
             <img src={property.coverPhoto.url} alt={property.title} className='w-full h-96 md:h-full aspect-square object-cover rounded-2xl'/>
         </div>
         <h3 className='text-2xl font-semibold tracking-wide leading-[2.3rem] line-clamp-2 text-[#333333]'>{property.title}</h3>

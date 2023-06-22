@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import React, { useState } from 'react'
-import {FaBars, FaWindowClose} from "react-icons/fa"
+import {FaBars, FaWindowClose, FaCity} from "react-icons/fa"
 
 function Nav() {
 
@@ -8,12 +8,10 @@ function Nav() {
 
   return (
     <div className='max-w-7xl mx-auto p-5 flex justify-between items-center relative'>
-        <img
-            src="logo.png"
-            alt="Dhamen Logo"
-            className='w-[106px] h-full'
-            loading='lazy'
-        />
+        <div className='flex items-center space-x-3'>
+            <FaCity className='w-8 h-8 text-[#3854B5]'/>
+            <h1 className='font-bold text-2xl text-[#333333]'>Dhalem</h1>
+        </div>
         <div className='hidden lg:flex items-center space-x-12'>
             <Link href="/" className='text-black/60 hover:text-black/80'>
                 Home
@@ -24,7 +22,7 @@ function Nav() {
             <Link href="/" className='text-black/60 hover:text-black/80'>
                 Services
             </Link>
-            <Link href="/" className='text-black/60 hover:text-black/80'>
+            <Link href="/blog" className='text-black/60 hover:text-black/80'>
                 Blog
             </Link>
             <Link href="/" className='text-black/60 hover:text-black/80'>
@@ -43,11 +41,10 @@ function Nav() {
                 <div className='absolute top-0 left-0 w-full z-10 bg-white'>
                     <div className='p-5 flex flex-col space-y-4'>
                         <div className='flex items-center justify-between'>
-                            <img
-                                src="logo.png"
-                                alt="Dhamen Logo"
-                                className='w-[106px] h-full'
-                            />
+                            <div className='flex items-center space-x-3'>
+                                <FaCity className='w-8 h-8 text-[#3854B5]'/>
+                                <h1 className='font-bold text-2xl text-[#333333]'>Dhalem</h1>
+                            </div>
                             <FaWindowClose className='w-5 h-5 cursor-pointer hover:text-[#3854B5]' onClick={() => setIsMenuOpen(false)}/>
                         </div>
                         <div className='flex flex-col space-y-3'>
@@ -60,7 +57,7 @@ function Nav() {
                             <Link href="/" className='text-black/60 hover:text-black/80' onClick={() => setIsMenuOpen(false)}>
                                 Services
                             </Link>
-                            <Link href="/" className='text-black/60 hover:text-black/80' onClick={() => setIsMenuOpen(false)}>
+                            <Link href="/blog" className='text-black/60 hover:text-black/80' onClick={() => setIsMenuOpen(false)}>
                                 Blog
                             </Link>
                             <Link href="/" className='text-black/60 hover:text-black/80' onClick={() => setIsMenuOpen(false)}>
